@@ -39,9 +39,24 @@ void str_indexing(string str){
     }
     cout << str_1 << endl;
 }}
+void pattern(int n){
+    //pattern
+    //     *
+    //    ***
+    //   *****
+for(int i=1;i<=n;i++){
+    for(int j=1;j<=2*n-1;j++){
+        if(j>=n-(i-1) && j<= n+(i-1)){
+            cout<< "*";
+        }
+        else{
+            cout<< " ";
+        }
+    }
+    cout<<"\n";
+}
+}
 int main(){
-    string str;
-    getline(cin,str);
-    str_indexing(str);
-    return 0;
+pattern(5);
+return 0;
 }
