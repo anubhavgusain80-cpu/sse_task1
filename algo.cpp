@@ -43,8 +43,27 @@ int ls_recursion(int arr[], int size,int element ){
         return ls_recursion(arr,size-1,element);
     }
 }
+
+void selectionsort(int arr[], int size) {
+    for(int i = 0; i < size - 1; i++) {
+
+        int minIndex = i;
+
+        for(int j = i + 1; j < size; j++) {
+            if(arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+        }
+
+        swap(arr[i], arr[minIndex]);
+    }
+
+    for(int i = 0; i < size; i++) {
+        cout << arr[i] << " ";
+    }
+}
 int main(){
-    int arr[] = {12,16,20,28,50,60,66,88,100};
-    ls_recursion(arr,9,20);
+    int arr[] = {12,16,20,69,1,60,66,88,100};
+    selectionsort(arr,9);
     return 0;
 }
