@@ -31,8 +31,20 @@ int binarysearch(int arr[],int n,int element){
 }
     return 0;
 }
+int ls_recursion(int arr[], int size,int element ){
+    if(size==0){
+        return -1;
+    }
+    if(arr[size-1]==element){
+        cout<<"element found at index"<<size-1;
+        return size-1;
+    }
+    else{
+        return ls_recursion(arr,size-1,element);
+    }
+}
 int main(){
     int arr[] = {12,16,20,28,50,60,66,88,100};
-    binarysearch(arr,9,20);
+    ls_recursion(arr,9,20);
     return 0;
 }
